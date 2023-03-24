@@ -42,4 +42,4 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 
 **Cloud Functions:**
 
-* **greetTheWorld:** HTTP request-triggered function that responds with a specified greeting message
+* **greetTheWorld:** HTTP request-triggered function

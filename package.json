@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "generate-readmes": "nx run-many --target=generate-readme --all --parallel",
+    "generate-readmes": "nx run-many --target=generate-readme --all --parallel && git add .",
     "prepare": "husky install"
   },
   "private": true,
