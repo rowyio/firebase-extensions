@@ -36,6 +36,8 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 
 * Users collection path: The path to the collection where user documents will be created. This collection will be created if it does not exist.
 
+* Fields to populate: The fields to populate in the user document. If you select a field that does not exist in the user record, it will be ignored.
+
 * Cloud Functions location: Where do you want to deploy the functions created for this extension? For help selecting a location, refer to the [location selection guide](https://firebase.google.com/docs/functions/locations).
 
 
