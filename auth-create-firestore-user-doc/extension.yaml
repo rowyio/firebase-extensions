@@ -49,6 +49,32 @@ params:
     default: users
     required: true
 
+  - param: FIELDS_TO_POPULATE
+    label: Fields to populate
+    description: >-
+      The fields to populate in the user document. If you select a field that
+      does not exist in the user record, it will be ignored.
+    type: multiselect
+    options:
+      - label: uid
+        value: uid
+      - label: email
+        value: email
+      - label: emailVerified
+        value: emailVerified
+      - label: displayName
+        value: displayName
+      - label: photoURL
+        value: photoURL
+      - label: phoneNumber
+        value: phoneNumber
+      - label: disabled
+        value: disabled
+      - label: creationTime
+        value: creationTime
+    default: email,displayName,photoURL
+    required: true
+
   - param: LOCATION
     label: Cloud Functions location
     description: >-
