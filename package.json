@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "generate-readmes": "nx run-many --target=generate-readme --all --parallel"
+    "generate-readmes": "nx run-many --target=generate-readme --all --parallel",
+    "prepare": "husky install"
   },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nrwl/nx-cloud": "latest",
+    "husky": "^8.0.3",
     "nx": "15.8.7",
     "prettier": "^2.6.2"
   },
