@@ -16,9 +16,9 @@ author:
   url: https://rowy.io
 
 contributors:
-  authorName: Yaman Katby
-  email: me@yamankatby.com
-  url: https://github.com/yamankatby
+  - authorName: Yaman Katby
+    email: me@yamankatby.com
+    url: https://github.com/yamankatby
 
 billingRequired: false
 
