@@ -22,26 +22,32 @@ contributors:
 
 billingRequired: false
 
+roles:
+  - role: datastore.user
+    reason: Allows the extension to create the user document in Firestore.
+
 resources:
-  - name: greetTheWorld
+  - name: createUserDocument
     type: firebaseextensions.v1beta.function
     description: >-
-      HTTP request-triggered function
+      A function triggered by a user creation event in Firebase Authentication
+      that creates the user document in Firestore.
     properties:
       location: ${LOCATION}
-      httpsTrigger: {}
+      eventTrigger:
+        eventType: providers/firebase.auth/eventTypes/user.create
+        resource: projects/${PROJECT_ID}
       runtime: 'nodejs16'
 
 params:
-  - param: GREETING
-    label: Greeting for the world
+  - param: USERS_COLLECTION_PATH
+    label: Users collection path
     description: >-
-      What do you want to say to the world?
-      For example, Hello world? or What's up, world?
+      The path to the collection where user documents will be created. This
+      collection will be created if it does not exist.
     type: string
-    default: Hello
+    default: users
     required: true
-    immutable: false
 
   - param: LOCATION
     label: Cloud Functions location

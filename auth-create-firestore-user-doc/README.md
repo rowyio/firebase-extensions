@@ -34,7 +34,7 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 
 **Configuration Parameters:**
 
-* Greeting for the world: What do you want to say to the world? For example, Hello world? or What's up, world?
+* Users collection path: The path to the collection where user documents will be created. This collection will be created if it does not exist.
 
 * Cloud Functions location: Where do you want to deploy the functions created for this extension? For help selecting a location, refer to the [location selection guide](https://firebase.google.com/docs/functions/locations).
 
@@ -42,4 +42,14 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 
 **Cloud Functions:**
 
-* **greetTheWorld:** HTTP request-triggered function
+* **createUserDocument:** A function triggered by a user creation event in Firebase Authentication that creates the user document in Firestore.
+
+
+
+**Access Required**:
+
+
+
+This extension will operate with the following project IAM roles:
+
+* datastore.user (Reason: Allows the extension to create the user document in Firestore.)
