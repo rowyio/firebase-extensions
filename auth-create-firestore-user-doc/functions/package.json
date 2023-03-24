@@ -7,6 +7,7 @@
     "build:watch": "tsc --watch",
     "mocha": "mocha '**/*.spec.ts'",
     "test": "(cd integration-tests && firebase emulators:exec 'npm run mocha' -P demo-test)",
+    "emulators:start": "cd ./integration-tests && firebase emulators:start",
     "generate-readme": "firebase ext:info .. --markdown > ../README.md"
   },
   "main": "lib/index.js",

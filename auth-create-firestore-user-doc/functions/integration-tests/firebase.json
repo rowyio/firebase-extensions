@@ -1,5 +1,11 @@
 {
   "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
     "functions": {
       "port": 5001
     },
@@ -9,6 +15,6 @@
     "singleProjectMode": true
   },
   "extensions": {
-    "greet-the-world": "../.."
+    "auth-create-firestore-user-doc": "../.."
   }
 }
