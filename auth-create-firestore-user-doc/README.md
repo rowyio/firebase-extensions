@@ -1,6 +1,6 @@
 # Create Firestore user document
 
-**Author**: undefined 
+**Author**: Rowy (**[https://rowy.io](https://rowy.io)**)
 
 **Description**: Creates a Firestore document for each new user in your Firebase Authentication user collection.
 
