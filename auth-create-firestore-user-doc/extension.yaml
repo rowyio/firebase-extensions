@@ -10,6 +10,16 @@ description: >-
 license: Apache-2.0
 sourceUrl: https://github.com/rowyio/firebase-extensions/tree/main/auth-create-firestore-user-doc
 
+author:
+  authorName: Rowy
+  email: hello@rowy.io
+  url: https://rowy.io
+
+contributors:
+  authorName: Yaman Katby
+  email: me@yamankatby.com
+  url: https://github.com/yamankatby
+
 billingRequired: false
 
 resources:
