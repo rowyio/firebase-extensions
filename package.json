@@ -2,7 +2,9 @@
   "name": "firebase-extensions",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "generate-readmes": "nx run-many --target=generate-readme --all --parallel"
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
