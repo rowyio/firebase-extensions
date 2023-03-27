@@ -49,6 +49,35 @@ params:
     default: users
     required: true
 
+  - param: PROVIDERS
+    label: Providers to create user documents for
+    description: >-
+      The providers to create user documents for.
+    type: multiselect
+    options:
+      - label: Email/Password
+        value: password
+      - label: Phone
+        value: phone
+      - label: Anonymous
+        value: anonymous
+      - label: Google
+        value: google.com
+      - label: Facebook
+        value: facebook.com
+      - label: Twitter
+        value: twitter.com
+      - label: GitHub
+        value: github.com
+      - label: Microsoft
+        value: microsoft.com
+      - label: Yahoo
+        value: yahoo.com
+      - label: Apple
+        value: apple.com
+      - label: LinkedIn
+        value: linkedin.com
+
   - param: FIELDS_TO_POPULATE
     label: Fields to populate
     description: >-
