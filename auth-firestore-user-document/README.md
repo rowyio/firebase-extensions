@@ -1,14 +1,10 @@
 # Firestore User Document
 
-**Author**: Rowy (**[https://rowy.io](https://rowy.io)**)
-
-**Description**: Creates a document in a specified Firestore collection whenever a new user is created in Firebase Authentication. The document is populated with fields that you select from the user record. You can also choose to delete the user's document when the user is deleted from Firebase Authentication.
-
-**Details**: Use this extension to create a document in a Firestore collection of your choice whenever a new user is created in Firebase Authentication. You can also specify the user fields you want to populate the document with, such as email, display name, image URL, etc.
+The Firestore User Document extension allows you to automatically create a document in a Firestore collection of your choice whenever a new user is created in Firebase Authentication. You can also specify the user fields that you want to populate the document with, such as email, display name, image URL, and more.
 
 Optionally, this extension can be configured to delete the user's document when the user is deleted from Firebase Authentication. Furthermore, the extension can be set to backfill existing users and create documents for all of them.
 
-## 🧩 Install the extension
+## 🧩 Installation
 
 To install the extension, follow the steps on the [Install a Firebase Extension](https://firebase.google.com/docs/extensions/install-extensions) page. In summary, do one of the following:
 
@@ -18,11 +14,11 @@ To install the extension, follow the steps on the [Install a Firebase Extension]
 
 - **Install from the Firebase CLI:** Run the following command:
 
-  ```bash
+  ```
   firebase ext:install rowy/firestore-user-document --project=YOUR_PROJECT_ID
   ```
 
-### 🛠️ Configuration Parameters
+## 🛠️ Configuration Parameters
 
 | Name                           | Description                                                                                                                                                                                         |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -31,19 +27,3 @@ To install the extension, follow the steps on the [Install a Firebase Extension]
 | Delete document on user delete | If you enable this option, the extension will automatically delete the Firestore user document when the user is deleted from Firebase Authentication.                                               |
 | Backfill existing users        | If you enable this option, the extension will create Firestore user documents for all existing users right after installation is complete.                                                          |
 | Cloud Functions location       | Where do you want to deploy the functions created for this extension? For help selecting a location, refer to the [location selection guide](https://firebase.google.com/docs/functions/locations). |
-
-**Cloud Functions:**
-
-- **createUserDocument:** A function that is triggered when a new user is created in Firebase Authentication. It creates a user document in a specified Firestore collection and populates it with the selected fields from the user record.
-
-- **deleteUserDocument:** A function that is triggered when a user is deleted from Firebase Authentication. If the instance is configured to do so, it deletes the user document from the specified Firestore collection.
-
-- **backfillExistingUsers:** A function that is triggered right after the extension installation is complete. If the instance is configured to do so, it creates user documents in the specified Firestore collection for all existing users.
-
-**Access Required**:
-
-This extension will operate with the following project IAM roles:
-
-- datastore.user (Reason: Allows the extension to create the user document in Firestore.)
-
-- firebaseauth.admin (Reason: Allows the extension to read the user record from Firebase Authentication.)
