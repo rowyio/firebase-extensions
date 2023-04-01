@@ -38,6 +38,8 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 
 * Fields to populate: The fields to populate in the user document. If you select a field that does not exist in the user record, it will be ignored.
 
+* Backfill existing users: If you enable this option, the extension creates user documents for all existing users right after installation is complete.
+
 * Cloud Functions location: Where do you want to deploy the functions created for this extension? For help selecting a location, refer to the [location selection guide](https://firebase.google.com/docs/functions/locations).
 
 
@@ -45,6 +47,8 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 **Cloud Functions:**
 
 * **createUserDocument:** A function triggered by a user creation event in Firebase Authentication that creates the user document in Firestore.
+
+* **backfillExistingUsers:** A function that runs after the extension is installed that creates user documents for all existing users if the backfill option is enabled.
 
 
 
