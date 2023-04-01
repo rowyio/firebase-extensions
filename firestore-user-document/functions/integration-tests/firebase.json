@@ -15,6 +15,6 @@
     "singleProjectMode": true
   },
   "extensions": {
-    "auth-firestore-user-document": "../.."
+    "firestore-user-document": "../.."
   }
 }
