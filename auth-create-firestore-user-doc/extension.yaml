@@ -39,6 +39,15 @@ resources:
         resource: projects/${PROJECT_ID}
       runtime: 'nodejs16'
 
+  - name: backfillExistingUsers
+    type: firebaseextensions.v1beta.function
+    description: >-
+      A function that runs after the extension is installed that creates user
+      documents for all existing users if the backfill option is enabled.
+    properties:
+      location: ${param:LOCATION}
+      taskQueueTrigger: {}
+
 params:
   - param: USERS_COLLECTION_PATH
     label: Users collection path
@@ -48,35 +57,6 @@ params:
     type: string
     default: users
     required: true
-
-  - param: PROVIDERS
-    label: Providers to create user documents for
-    description: >-
-      The providers to create user documents for.
-    type: multiselect
-    options:
-      - label: Email/Password
-        value: password
-      - label: Phone
-        value: phone
-      - label: Anonymous
-        value: anonymous
-      - label: Google
-        value: google.com
-      - label: Facebook
-        value: facebook.com
-      - label: Twitter
-        value: twitter.com
-      - label: GitHub
-        value: github.com
-      - label: Microsoft
-        value: microsoft.com
-      - label: Yahoo
-        value: yahoo.com
-      - label: Apple
-        value: apple.com
-      - label: LinkedIn
-        value: linkedin.com
 
   - param: FIELDS_TO_POPULATE
     label: Fields to populate
@@ -102,6 +82,20 @@ params:
       - label: creationTime
         value: creationTime
     default: email,displayName,photoURL
+    required: true
+
+  - param: BACKFILL_EXISTING_USERS
+    label: Backfill existing users
+    description: >-
+      If you enable this option, the extension creates user documents for all
+      existing users right after installation is complete.
+    type: select
+    options:
+      - label: Yes
+        value: true
+      - label: No
+        value: false
+    default: true
     required: true
 
   - param: LOCATION
@@ -154,3 +148,8 @@ params:
         value: australia-southeast1
     required: true
     immutable: true
+
+lifecycleEvents:
+  onInstall:
+    function: backfillExistingUsers
+    processingMessage: Creating user documents for existing users...
