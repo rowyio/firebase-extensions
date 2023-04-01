@@ -1,5 +1,5 @@
 {
-  "name": "auth-create-firestore-user-doc",
+  "name": "auth-firestore-user-document",
   "scripts": {
     "lint": "eslint \"src/**/*\"",
     "lint:fix": "eslint \"src/**/*\" --fix",

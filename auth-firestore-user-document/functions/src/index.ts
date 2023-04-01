@@ -36,7 +36,16 @@ export const createUserDocument = functions.auth
     return userDocumentRef.set(data);
   });
 
-const BATCH_SIZE = 1;
+export const deleteUserDocument = functions.auth
+  .user()
+  .onDelete(async (user) => {
+    if (!config.deleteDocumentOnUserDelete) {
+      return;
+    }
+    return usersCollection.doc(user.uid).delete();
+  });
+
+const BATCH_SIZE = 100;
 
 export const backfillExistingUsers = functions.tasks
   .taskQueue()
