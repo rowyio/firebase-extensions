@@ -59,3 +59,5 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 This extension will operate with the following project IAM roles:
 
 * datastore.user (Reason: Allows the extension to create the user document in Firestore.)
+
+* firebaseauth.admin (Reason: Allows the extension to read the user record from Firebase Authentication.)
