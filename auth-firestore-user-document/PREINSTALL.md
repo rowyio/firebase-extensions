@@ -2,6 +2,8 @@ Use this extension to create a document in a Firestore collection of your choice
 
 Optionally, you can also configure the extension to delete the user's document when the user is deleted from Firebase Authentication.
 
+You can also configure the extension to **backfill** existing users and create documents for all of them.
+
 # Billing
 
 This extension uses other Firebase or Google Cloud Platform services which may have associated charges:
