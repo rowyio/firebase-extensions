@@ -1,9 +1,9 @@
-# Firebase Extensions by Rowy 💜
+# Firebase Extensions by Rowy Team 💜
 
 A collection of Firebase Extensions built by the Rowy team to help you build your app
 faster.
 
-## 📝 Create Firestore User Document
+## 📝 Firestore User Document
 
 Use this extension to create a document in a Firestore collection of your choice whenever a new user is created in Firebase Authentication and populate it with the user fields you specify (eg email, display name, image URL, etc.).
 
