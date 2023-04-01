@@ -41,6 +41,19 @@ resources:
         resource: projects/${PROJECT_ID}
       runtime: 'nodejs16'
 
+  - name: deleteUserDocument
+    type: firebaseextensions.v1beta.function
+    description: >-
+      A function triggered by a user deletion event in Firebase Authentication
+      that deletes the user document in Firestore if the instance is configured
+      to do so.
+    properties:
+      location: ${LOCATION}
+      eventTrigger:
+        eventType: providers/firebase.auth/eventTypes/user.delete
+        resource: projects/${PROJECT_ID}
+      runtime: 'nodejs16'
+
   - name: backfillExistingUsers
     type: firebaseextensions.v1beta.function
     description: >-
@@ -91,6 +104,20 @@ params:
     description: >-
       If you enable this option, the extension creates user documents for all
       existing users right after installation is complete.
+    type: select
+    options:
+      - label: Yes
+        value: true
+      - label: No
+        value: false
+    default: true
+    required: true
+
+  - param: DELETE_DOCUMENT_ON_USER_DELETE
+    label: Delete document on user delete
+    description: >-
+      If you enable this option, the extension deletes the user document when the
+      user is deleted from Firebase Authentication.
     type: select
     options:
       - label: Yes
