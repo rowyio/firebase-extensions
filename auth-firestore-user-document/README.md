@@ -1,8 +1,8 @@
-# Create Firestore user document
+# Manage user documents in Firestore
 
 **Author**: Rowy (**[https://rowy.io](https://rowy.io)**)
 
-**Description**: Creates a Firestore document for each new user in your Firebase Authentication user collection.
+**Description**: Creates a user document in Firestore for each user created in Firebase Authentication in a collection of your choice and populates it with the selected user fields. Optionally, deletes the user document when the user is deleted from Firebase Authentication.
 
 
 
@@ -23,9 +23,11 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 
 **Configuration Parameters:**
 
-* Users collection path: The path to the collection where user documents will be created. This collection will be created if it does not exist.
+* Users collection path: The path to the collection where user documents will be created.
 
 * Fields to populate: The fields to populate in the user document. If you select a field that does not exist in the user record, it will be ignored.
+
+* Delete document on user delete: If you enable this option, the extension deletes the user document when the user is deleted from Firebase Authentication.
 
 * Backfill existing users: If you enable this option, the extension creates user documents for all existing users right after installation is complete.
 
@@ -37,7 +39,9 @@ When you use Firebase Extensions, you're only charged for the underlying resourc
 
 * **createUserDocument:** A function triggered by a user creation event in Firebase Authentication that creates the user document in Firestore.
 
-* **backfillExistingUsers:** A function that runs after the extension is installed that creates user documents for all existing users if the backfill option is enabled.
+* **deleteUserDocument:** A function triggered by a user deletion event in Firebase Authentication that deletes the user document in Firestore if the instance is configured to do so.
+
+* **backfillExistingUsers:** A function triggered right after the extension installation is complete that creates user documents for already existing users if the instance is configured to do so.
 
 
 

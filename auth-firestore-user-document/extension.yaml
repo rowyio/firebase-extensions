@@ -1,14 +1,16 @@
-name: auth-create-firestore-user-doc
+name: auth-firestore-user-document
 version: 0.0.1
 specVersion: v1beta
-displayName: Create Firestore user document
+displayName: Manage user documents in Firestore
 
 description: >-
-  Creates a Firestore document for each new user in your Firebase Authentication
-  user collection.
+  Creates a user document in Firestore for each user created in Firebase
+  Authentication in a collection of your choice and populates it with the
+  selected user fields. Optionally, deletes the user document when the user is
+  deleted from Firebase Authentication.
 
 license: Apache-2.0
-sourceUrl: https://github.com/rowyio/firebase-extensions/tree/main/auth-create-firestore-user-doc
+sourceUrl: https://github.com/rowyio/firebase-extensions/tree/main/auth-firestore-user-document
 
 author:
   authorName: Rowy
@@ -26,7 +28,8 @@ roles:
   - role: datastore.user
     reason: Allows the extension to create the user document in Firestore.
   - role: firebaseauth.admin
-    reason: Allows the extension to read the user record from Firebase Authentication.
+    reason: >-
+      Allows the extension to read the user record from Firebase Authentication.
 
 resources:
   - name: createUserDocument
@@ -57,8 +60,9 @@ resources:
   - name: backfillExistingUsers
     type: firebaseextensions.v1beta.function
     description: >-
-      A function that runs after the extension is installed that creates user
-      documents for all existing users if the backfill option is enabled.
+      A function triggered right after the extension installation is complete
+      that creates user documents for already existing users if the instance is
+      configured to do so.
     properties:
       location: ${param:LOCATION}
       taskQueueTrigger: {}
@@ -67,10 +71,10 @@ params:
   - param: USERS_COLLECTION_PATH
     label: Users collection path
     description: >-
-      The path to the collection where user documents will be created. This
-      collection will be created if it does not exist.
+      The path to the collection where user documents will be created.
     type: string
     default: users
+    example: users
     required: true
 
   - param: FIELDS_TO_POPULATE
@@ -99,11 +103,11 @@ params:
     default: email,displayName,photoURL
     required: true
 
-  - param: BACKFILL_EXISTING_USERS
-    label: Backfill existing users
+  - param: DELETE_DOCUMENT_ON_USER_DELETE
+    label: Delete document on user delete
     description: >-
-      If you enable this option, the extension creates user documents for all
-      existing users right after installation is complete.
+      If you enable this option, the extension deletes the user document when the
+      user is deleted from Firebase Authentication.
     type: select
     options:
       - label: Yes
@@ -113,11 +117,11 @@ params:
     default: true
     required: true
 
-  - param: DELETE_DOCUMENT_ON_USER_DELETE
-    label: Delete document on user delete
+  - param: BACKFILL_EXISTING_USERS
+    label: Backfill existing users
     description: >-
-      If you enable this option, the extension deletes the user document when the
-      user is deleted from Firebase Authentication.
+      If you enable this option, the extension creates user documents for all
+      existing users right after installation is complete.
     type: select
     options:
       - label: Yes
@@ -181,4 +185,4 @@ params:
 lifecycleEvents:
   onInstall:
     function: backfillExistingUsers
-    processingMessage: Creating user documents for existing users...
+    processingMessage: Backfilling already existing users...
