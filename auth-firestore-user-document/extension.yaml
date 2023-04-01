@@ -4,10 +4,10 @@ specVersion: v1beta
 displayName: Manage user documents in Firestore
 
 description: >-
-  Creates a user document in Firestore for each user created in Firebase
-  Authentication in a collection of your choice and populates it with the
-  selected user fields. Optionally, deletes the user document when the user is
-  deleted from Firebase Authentication.
+  Creates a document in a Firestore collection of your choice for each user
+  created in Firebase Authentication and populates it with the user fields you
+  specify. Optionally deletes the user's document when deleting the user from
+  Firebase Authentication.
 
 license: Apache-2.0
 sourceUrl: https://github.com/rowyio/firebase-extensions/tree/main/auth-firestore-user-document

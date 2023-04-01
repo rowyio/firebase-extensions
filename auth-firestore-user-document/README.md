@@ -2,7 +2,7 @@
 
 **Author**: Rowy (**[https://rowy.io](https://rowy.io)**)
 
-**Description**: Creates a user document in Firestore for each user created in Firebase Authentication in a collection of your choice and populates it with the selected user fields. Optionally, deletes the user document when the user is deleted from Firebase Authentication.
+**Description**: Creates a document in a Firestore collection of your choice for each user created in Firebase Authentication and populates it with the user fields you specify. Optionally deletes the user's document when deleting the user from Firebase Authentication.
 
 
 
