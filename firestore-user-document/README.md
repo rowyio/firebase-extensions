@@ -1,9 +1,13 @@
 # Firestore User Document
 
-The Firestore User Document extension allows you to automatically create a document in a Firestore collection of your choice whenever a new user is created in Firebase Authentication. You can also specify the user fields that you want to populate the document with, such as email, display name, image URL, etc.
+**Author**: Rowy (**[https://rowy.io](https://www.rowy.io)**)
 
-Optionally, this extension can be configured to delete the user's document when the user is deleted from Firebase Authentication. Furthermore, the extension can be set to backfill existing users and create documents for all of them.
+**Description**: Create a document in a Firestore collection whenever a new user is created with Firesbase Authentication.
 
+**Details**: Use this extension to create a document in a Firestore collection of your choice whenever a new user is created in Firebase Authentication. You can also specify the user fields that you want to include in the document, such as email, display name, image URL, etc. 
+
+Optionally, this extension can be configured to delete the user's document when the user is deleted from Firebase Authentication. Additionally, the extension can be set to backfill existing Firebase Authenticated users in the collection and create documents for all of them.
+ 
 ## 🧩 Installation
 
 To install the extension, follow the steps on the [Install a Firebase Extension](https://firebase.google.com/docs/extensions/install-extensions) page. In summary, do one of the following:
