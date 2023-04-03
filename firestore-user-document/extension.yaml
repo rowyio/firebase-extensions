@@ -87,7 +87,7 @@ params:
       Select the fields from the user record that you want to populate in the
       Firestore document. If you select a field that does not exist in the user
       record, it will be ignored.
-    type: multiselect
+    type: multiSelect
     options:
       - label: uid
         value: uid
