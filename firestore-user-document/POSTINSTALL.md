@@ -1,15 +1,14 @@
 # See it in action
 
-You can test out this extension right away!
+You can the extension in action, by visiting the Firestore collection that was created where your Firebase Authenticated users doc will be added.
 
-Visit the following URL:
-${function:greetTheWorld.url}
+# Next step, manage the users on Rowy Admin Panel
 
-# Using the extension
+You can now manage this collection on a [Rowy](https://www.rowy.io/)'s spreadsheet UI easily and get an instant admin panel for free. You can also invite your team members with granular access control and build any operational process such as managing subscriptions, deactivation/deletion workflow or building signup email flows etc. 
 
-When triggered by an HTTP request, this extension responds with the following specified greeting: "${param:GREETING} World from ${param:EXT_INSTANCE_ID}".
+📺 Watch the [step-by-step guided video](https://www.youtube.com/watch?v=S14fdSps9Mc) on how to view and manage your user document collection (or any Firestore data) on Rowy's spreadsheet UI.
 
-To learn more about HTTP functions, visit the [functions documentation](https://firebase.google.com/docs/functions/http-events).
+[![image](https://user-images.githubusercontent.com/307298/229514160-fa4fbf8d-c4fb-4179-98ed-7194a1612658.png)](https://demo.rowy.io/table/userManagement#sideDrawer=%22table-information%22)
 
 # Monitoring
 

@@ -1,6 +1,6 @@
 # Firebase Extensions by Rowy Team 💜
 
-This is a collection of Firebase Extensions built by the Rowy team, designed to help you build your app faster.
+This is a collection of Firebase Extensions built by the [Rowy](https://www.rowy.io/?ref=firebase-extensions) team, designed to help you build your app faster.
 
 ## 📝 Firestore User Document
 

@@ -9,6 +9,8 @@ description: >-
   you select from the user record. You can also choose to delete the user's
   document when the user is deleted from Firebase Authentication.
 
+icon: icon.png
+
 license: Apache-2.0
 sourceUrl: https://github.com/rowyio/firebase-extensions/tree/main/firestore-user-document
 
