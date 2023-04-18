@@ -8,8 +8,6 @@ You can now manage this collection on a [Rowy](https://www.rowy.io/)'s spreadshe
 
 📺 Watch the [step-by-step guided video](https://www.youtube.com/watch?v=S14fdSps9Mc) on how to view and manage your user document collection (or any Firestore data) on Rowy's spreadsheet UI.
 
-[![image](https://user-images.githubusercontent.com/307298/229514160-fa4fbf8d-c4fb-4179-98ed-7194a1612658.png)](https://demo.rowy.io/table/userManagement#sideDrawer=%22table-information%22)
-
 # Monitoring
 
 As a best practice, you can [monitor the activity](https://firebase.google.com/docs/extensions/manage-installed-extensions#monitor) of your installed extension, including checks on its health, usage, and logs.
