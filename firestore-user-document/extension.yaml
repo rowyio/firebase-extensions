@@ -32,9 +32,9 @@ billingRequired: false
 roles:
   - role: datastore.user
     reason: Allows the extension to create the user document in Firestore.
-  - role: firebaseauth.admin
+  - role: firebaseauth.users.get
     reason: >-
-      Allows the extension to read the user record from Firebase Authentication.
+      Allows the extension to read the list of existing users in Firebase
 
 resources:
   - name: createUserDocument
