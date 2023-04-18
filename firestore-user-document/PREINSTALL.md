@@ -10,6 +10,6 @@ This extension uses other Firebase or Google Cloud Platform services which may h
 
 When you use Firebase Extensions, you're only charged for the underlying resources that you use. A paid-tier billing plan is only required if the extension uses a service that requires a paid-tier plan, for example calling to a Google Cloud Platform API or making outbound network requests to non-Google services. All Firebase services offer a free tier of usage. [Learn more about Firebase billing.](https://firebase.google.com/pricing)
 
-# Optional, admin panel on Rowy
+# Additional setup
 
-Once the extension is installed, you can manage this Firebase collection of authenticated users on [Rowy](https://www.rowy.io/?ref=extension)'s admin panel with spreadsheet like UI.
+Once the extension is installed, you have the option to manage Firebase Authenticated users synced collection on [Rowy](https://www.rowy.io/?ref=extension) - which gives an admin portal with collaborative spreadsheet-like-UI.
