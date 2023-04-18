@@ -1,7 +1,5 @@
 ### See it in action
 
-You can the extension in action, by visiting the Firestore collection that was created where your Firebase Authenticated users doc will be added.
-
 You can test out this extension right away:
 
 1.  Go to the [Cloud Firestore tab](https://console.firebase.google.com/project/${param:PROJECT_ID}/database/firestore/data)
