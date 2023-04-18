@@ -8,7 +8,7 @@ Before installing this extension, make sure that you've
 [set up a Cloud Firestore database](https://firebase.google.com/docs/firestore/quickstart)
 in your Firebase project.
 
-You can also optionally have a Rowy account setup after installing this extension - to manage the Firebase Authenticated users Firestore collection and any other Firestore collection on a collaborative spreadsheet-like CMS UI. You can do so on the [Rowy]([https://www.algolia.com/](https://www.rowy.io/?ref=extension) site.
+You can also optionally have a Rowy account setup after installing this extension - to manage the Firebase Authenticated users Firestore collection and any other Firestore collection on a collaborative spreadsheet-like CMS UI. You can do so on the [Rowy](https://www.rowy.io/?ref=extension) site.
 
 #### Billing
 
