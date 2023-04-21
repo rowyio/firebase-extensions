@@ -11,6 +11,8 @@ description: >-
 
 icon: icon.png
 
+tags: [utilities]
+
 license: Apache-2.0
 sourceUrl: https://github.com/rowyio/firebase-extensions/tree/main/firestore-user-document
 
@@ -48,7 +50,7 @@ resources:
       eventTrigger:
         eventType: providers/firebase.auth/eventTypes/user.create
         resource: projects/${PROJECT_ID}
-      runtime: 'nodejs16'
+      runtime: "nodejs16"
 
   - name: deleteUserDocument
     type: firebaseextensions.v1beta.function
@@ -61,7 +63,7 @@ resources:
       eventTrigger:
         eventType: providers/firebase.auth/eventTypes/user.delete
         resource: projects/${PROJECT_ID}
-      runtime: 'nodejs16'
+      runtime: "nodejs16"
 
   - name: backfillExistingUsers
     type: firebaseextensions.v1beta.function
