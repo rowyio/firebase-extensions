@@ -78,36 +78,44 @@ export const backfillExistingUsers = functions.tasks
       data.pageToken
     );
 
-    const batch = db.batch();
+    try {
+      const batch = db.batch();
 
-    for (const user of users) {
-      const userDocumentRef = usersCollection.doc(user.uid);
-      const data = getUserDocumentData(user);
-      batch.set(userDocumentRef, data, { merge: true });
-    }
+      for (const user of users) {
+        const userDocumentRef = usersCollection.doc(user.uid);
+        const data = getUserDocumentData(user);
+        batch.set(userDocumentRef, data, { merge: true });
+      }
 
-    await batch.commit();
+      await batch.commit();
 
-    const createdDocumentsCount =
-      (Number(data.createdDocumentsCount) || 0) + users.length;
+      const createdDocumentsCount =
+        (Number(data.createdDocumentsCount) || 0) + users.length;
 
-    if (pageToken) {
-      const queue = getFunctions().taskQueue(
-        `locations/${config.location}/functions/backfillExistingUsers`,
-        process.env.EXT_INSTANCE_ID
-      );
-      await queue.enqueue({
-        pageToken,
-        createdDocumentsCount,
-      });
-    } else {
-      console.log(
-        `The backfill process is complete. Created ${createdDocumentsCount} ` +
-          "documents for existing users."
-      );
+      if (pageToken) {
+        const queue = getFunctions().taskQueue(
+          `locations/${config.location}/functions/backfillExistingUsers`,
+          process.env.EXT_INSTANCE_ID
+        );
+        await queue.enqueue({
+          pageToken,
+          createdDocumentsCount,
+        });
+      } else {
+        console.log(
+          `The backfill process is complete. Created ${createdDocumentsCount} ` +
+            "documents for existing users."
+        );
+        return runtime.setProcessingState(
+          "PROCESSING_COMPLETE",
+          `Created ${createdDocumentsCount} documents for existing users.`
+        );
+      }
+    } catch (e) {
+      console.error("Error while backfilling existing users", e);
       return runtime.setProcessingState(
-        "PROCESSING_COMPLETE",
-        `Created ${createdDocumentsCount} documents for existing users.`
+        "PROCESSING_FAILED",
+        "Error while backfilling existing users"
       );
     }
   });
