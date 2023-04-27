@@ -73,12 +73,12 @@ export const backfillExistingUsers = functions.tasks
       );
     }
 
-    const { users, pageToken } = await auth.listUsers(
-      BATCH_SIZE,
-      data.pageToken
-    );
-
     try {
+      const { users, pageToken } = await auth.listUsers(
+        BATCH_SIZE,
+        data.pageToken
+      );
+
       const batch = db.batch();
 
       for (const user of users) {
