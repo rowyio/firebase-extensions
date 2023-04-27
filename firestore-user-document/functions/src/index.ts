@@ -1,10 +1,10 @@
-import * as admin from 'firebase-admin';
-import { UserRecord } from 'firebase-admin/auth';
-import { getExtensions } from 'firebase-admin/extensions';
-import { getFunctions } from 'firebase-admin/functions';
-import * as functions from 'firebase-functions';
+import * as admin from "firebase-admin";
+import { UserRecord } from "firebase-admin/auth";
+import { getExtensions } from "firebase-admin/extensions";
+import { getFunctions } from "firebase-admin/functions";
+import * as functions from "firebase-functions";
 
-import config from './config';
+import config from "./config";
 
 admin.initializeApp();
 
@@ -54,22 +54,22 @@ export const backfillExistingUsers = functions.tasks
 
     if (!config.backfillExistingUsers) {
       return runtime.setProcessingState(
-        'PROCESSING_COMPLETE',
+        "PROCESSING_COMPLETE",
         "Documents for existing users weren't created because the parameter " +
           '"Backfill existing users" was set to  "No". If you want to create ' +
-          'documents for existing users, reconfigure this instance.'
+          "documents for existing users, reconfigure this instance."
       );
     }
 
-    if (!data.pageToken) {
+    if (data.pageToken) {
       console.log(
-        'Starting the backfill process. Checking for existing users to ' +
-          'create documents for.'
+        "Continue backfilling existing users process. Processing batch " +
+          `starting at page token: ${data.pageToken}`
       );
     } else {
       console.log(
-        'Continue backfilling existing users process. Processing batch ' +
-          `starting at page token: ${data.pageToken}`
+        "Starting the backfill process. Checking for existing users to " +
+          "create documents for."
       );
     }
 
@@ -103,10 +103,10 @@ export const backfillExistingUsers = functions.tasks
     } else {
       console.log(
         `The backfill process is complete. Created ${createdDocumentsCount} ` +
-          'documents for existing users.'
+          "documents for existing users."
       );
       return runtime.setProcessingState(
-        'PROCESSING_COMPLETE',
+        "PROCESSING_COMPLETE",
         `Created ${createdDocumentsCount} documents for existing users.`
       );
     }
