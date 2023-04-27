@@ -83,7 +83,7 @@ export const backfillExistingUsers = functions.tasks
     for (const user of users) {
       const userDocumentRef = usersCollection.doc(user.uid);
       const data = getUserDocumentData(user);
-      batch.set(userDocumentRef, data);
+      batch.set(userDocumentRef, data, { merge: true });
     }
 
     await batch.commit();
