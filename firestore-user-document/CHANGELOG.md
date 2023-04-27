@@ -1,6 +1,6 @@
 ## Version 0.0.4
 
-- Add bugs in the `backfillExistingUsers` function and add more logging.
+- Fix bugs in the `backfillExistingUsers` function and add more logging.
 
 ## Version 0.0.3
 
