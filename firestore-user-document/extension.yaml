@@ -1,5 +1,5 @@
 name: firestore-user-document
-version: 0.0.5
+version: 0.0.6
 specVersion: v1beta
 displayName: Firestore User Document
 
@@ -34,7 +34,7 @@ billingRequired: false
 roles:
   - role: datastore.user
     reason: Allows the extension to create the user document in Firestore.
-  - role: firebaseauth.users.get
+  - role: firebaseauth.viewer
     reason: >-
       Allows the extension to read the list of existing users in Firebase
 
